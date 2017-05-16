@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
     s.requires_arc        = true
 #s.resources           = "NMRangeSlider/Media/*.xcassets"
     s.resource_bundles = {
-        'NMRangeSlider' => ['NMRangeSlider/Media/*.xcassets']
+        'NMRangeSlider' => ['NMRangeSlider/Media.xcassets']
     }
 end
