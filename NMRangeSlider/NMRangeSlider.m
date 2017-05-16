@@ -234,14 +234,9 @@ NSUInteger DeviceSystemMajorVersion() {
 
 - (UIImage *)imageFromBundle:(NSString*)imageName {
     Class cls = [self classForCoder];
-    NSBundle* bundle = [NSBundle bundleForClass:cls];
-//    NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
-//    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
-//    return image;
-    NSLog(@"image name: %@ bundle: %@ class:%@",imageName,bundle,cls);
+    NSBundle* bundle = [NSBundle bundleWithURL:[[NSBundle bundleForClass:cls] URLForResource:@"NMRangeSlider" withExtension:@"bundle"]];
     
-    UIImage *img = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
-    return img;
+    return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 - (UIImage *)trackBackgroundImage
