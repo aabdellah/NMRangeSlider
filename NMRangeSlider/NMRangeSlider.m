@@ -704,4 +704,10 @@ NSUInteger DeviceSystemMajorVersion() {
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    // Used to prevent modal sheet dismiss pan gesture recongizer or any pan gesture recongizer from beginning.
+    return ![gestureRecognizer isKindOfClass:UIPanGestureRecognizer.class];
+}
+
 @end
